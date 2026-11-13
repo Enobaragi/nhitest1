@@ -1,0 +1,1438 @@
+/* ==========================================================
+   국가공무원인재개발원 포털 - 보노보노 PPT 테마 스타일시트
+   포털의 구조(헤더, 네비, 히어로, 탭, 카드, 아코디언, 푸터)는 100% 온전히 유지하고,
+   디자인 테마만 전설의 '보노보노 PPT (워드아트, 원색 그라데이션, 굴림체, 땀방울)'로 변경!
+========================================================== */
+
+:root {
+  --bono-blue: #4da6ff;
+  --bono-darkblue: #0066cc;
+  --hot-pink: #ff007f;
+  --soft-pink: #ffccff;
+  --neon-cyan: #00ffff;
+  --lime-green: #99ff66;
+  --bright-yellow: #ffff00;
+  --vivid-orange: #ff9900;
+  --pure-black: #000000;
+  --pure-white: #ffffff;
+  
+  --font-gulim: 'Gulim', '굴림', 'Malgun Gothic', '맑은 고딕', sans-serif;
+  --box-border: 3px solid #000000;
+  --box-shadow-ppt: 4px 4px 0 #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-gulim);
+  background-color: #fce7f3;
+  color: var(--pure-black);
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 1. 최상단 유틸리티 바 */
+.top-util-bar {
+  background: linear-gradient(90deg, #ff007f, #0066cc);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
+}
+
+.util-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+}
+
+.gov-badge {
+  color: #ffff00;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.util-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.util-links a:hover {
+  color: #ffff00;
+  text-decoration: underline;
+}
+
+.btn-bono-effect {
+  background: #ffff00;
+  color: #cc0000;
+  font-weight: 900;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+}
+.btn-bono-effect:hover {
+  transform: translate(-1px, -1px);
+}
+
+/* 2. 메인 헤더 & 네비게이션 */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffcc;
+  border-bottom: 4px solid #000000;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 헤더 보노보노 미니 얼굴 */
+.mini-bono-head {
+  width: 44px;
+  height: 44px;
+  background: var(--bono-blue);
+  border: 3px solid #000;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+.m-ear {
+  width: 10px;
+  height: 10px;
+  background: var(--bono-blue);
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+}
+.m-ear-l { left: 4px; }
+.m-ear-r { right: 4px; }
+.m-eye {
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 16px;
+}
+.m-eye-l { left: 9px; }
+.m-eye-r { right: 9px; }
+.m-snout {
+  width: 20px;
+  height: 12px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.m-sweat {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  font-size: 0.8rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-text .sub-kor {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #cc0066;
+}
+.rainbow-logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: linear-gradient(to right, red, orange, #008800, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(1px 1px 0 #000);
+}
+.logo-text .eng-sub {
+  font-size: 0.7rem;
+  color: #333333;
+  font-weight: bold;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 20px;
+}
+.main-nav a {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #000000;
+  padding: 6px 12px;
+  border: 2px solid transparent;
+}
+.main-nav a:hover {
+  background-color: #ff99cc;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+}
+.main-nav a.nav-highlight {
+  background-color: #ff007f;
+  color: #ffff00;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.btn-primary-sm {
+  background: #00ccff;
+  color: #000000;
+  font-weight: 900;
+  padding: 8px 16px;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  display: inline-block;
+}
+.btn-primary-sm:hover {
+  transform: translate(-1px, -1px);
+  background: #00ffff;
+}
+
+.mobile-menu-btn {
+  display: none;
+  font-size: 1.5rem;
+}
+
+/* 3. 메인 히어로 섹션 (보노보노 시그니처 핫핑크+시안) */
+.hero-section {
+  background: linear-gradient(135deg, #ff007f 0%, #00ffff 100%);
+  border-bottom: 5px solid #000000;
+  padding: 60px 0 80px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-bono-mascot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* 히어로 보노보노 얼굴 */
+.bono-face-hero {
+  width: 140px;
+  height: 140px;
+  background-color: var(--bono-blue);
+  border: 4px solid #000000;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 5px 5px 0 #000000;
+}
+.bh-ear {
+  width: 28px;
+  height: 28px;
+  background: var(--bono-blue);
+  border: 3px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+}
+.bh-ear-l { left: 8px; }
+.bh-ear-r { right: 8px; }
+.bh-eye {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+}
+.bh-eye-l { left: 28px; }
+.bh-eye-r { right: 28px; }
+
+.bh-snout {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 50px;
+}
+.bh-snout::before, .bh-snout::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 38px;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 50%;
+  top: 5px;
+}
+.bh-snout::before { left: 0; }
+.bh-snout::after { right: 0; }
+.bh-nose {
+  width: 18px;
+  height: 14px;
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.bh-mouth {
+  width: 12px;
+  height: 14px;
+  background-color: #ff3333;
+  border: 2px solid #000000;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+.bh-whisker {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background-color: #000000;
+  z-index: 6;
+}
+.wl1 { left: -8px; top: 18px; transform: rotate(10deg); }
+.wl2 { left: -8px; top: 28px; transform: rotate(-10deg); }
+.wr1 { right: -8px; top: 18px; transform: rotate(-10deg); }
+.wr2 { right: -8px; top: 28px; transform: rotate(10deg); }
+
+.bh-sweat {
+  position: absolute;
+  top: 15px;
+  right: 6px;
+  font-size: 1.6rem;
+  animation: sweatDrop 1s infinite alternate;
+}
+.bh-clam {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  font-size: 2rem;
+  transform: rotate(-15deg);
+}
+
+@keyframes sweatDrop {
+  from { transform: translateY(0); }
+  to { transform: translateY(6px); }
+}
+
+.hero-speech-bubble {
+  background: #ffffff;
+  border: 4px solid #000000;
+  border-radius: 20px;
+  padding: 12px 24px;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #000000;
+  box-shadow: 4px 4px 0 #000000;
+  max-width: 580px;
+  text-align: left;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: #ffff00;
+  border: 2px solid #000000;
+  padding: 6px 16px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #cc0000;
+  box-shadow: 3px 3px 0 #000000;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 3px 3px 0 #000000, -2px -2px 0 #000000;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.wordart-gradient {
+  background: linear-gradient(to right, #ffff00, #ff0033);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 2px 0 #000);
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #ffffcc;
+  text-shadow: 1px 1px 0 #000;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 45px;
+}
+
+.btn-main-primary {
+  background: #ffff00;
+  color: #cc0000;
+  font-size: 1.15rem;
+  font-weight: 900;
+  padding: 14px 28px;
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+}
+.btn-main-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #000000;
+}
+
+.btn-main-secondary {
+  background: #00ff66;
+  color: #000099;
+  font-size: 1.15rem;
+  font-weight: 900;
+  padding: 14px 28px;
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+}
+.btn-main-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #000000;
+}
+
+/* 퀵 위젯 3종 (보노보노 PPT 알록달록 카드) */
+.hero-quick-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: left;
+}
+
+.quick-card {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.qc-yellow { background-color: #ffff99; }
+.qc-green { background-color: #99ff99; }
+.qc-pink { background-color: #ff99ff; }
+
+.qc-icon {
+  width: 46px;
+  height: 46px;
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #000000;
+}
+
+.qc-info h4 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #000066;
+}
+.qc-info p {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.qc-tel {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #cc0000;
+}
+.qc-link {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #0000cc;
+}
+
+/* 섹션 공통 스타일 */
+.section-container {
+  padding: 70px 0;
+  border-bottom: 4px solid #000000;
+}
+
+.bg-mint { background-color: #ccffeb; }
+.bg-lemon { background-color: #ffffcc; }
+.bg-pink-soft { background-color: #ffd9f3; }
+.bg-sky { background-color: #d9f2ff; }
+.bg-pink-light { background-color: #ffe6f2; }
+
+.section-title-wrap {
+  margin-bottom: 40px;
+}
+.section-title-wrap.text-center {
+  text-align: center;
+}
+
+.section-subtitle {
+  display: inline-block;
+  background: #ff007f;
+  color: #ffff00;
+  font-size: 0.95rem;
+  font-weight: 900;
+  padding: 4px 14px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/* 워드아트 색상 */
+.wordart-blue {
+  color: #0033cc;
+  text-shadow: 2px 2px 0 #ffff00, 4px 4px 0 #000000;
+}
+.wordart-red {
+  color: #cc0000;
+  text-shadow: 2px 2px 0 #ffff00, 4px 4px 0 #000000;
+}
+.wordart-rainbow {
+  background: linear-gradient(to right, red, orange, green, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 2px 0 #000);
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* 4. 소개 카드 그리드 */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.about-card {
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+  padding: 24px 20px;
+  position: relative;
+}
+
+.card-pink { background-color: #ffccff; }
+.card-yellow { background-color: #ffff99; }
+.card-cyan { background-color: #99ffff; }
+.card-purple { background-color: #e6ccff; }
+
+.card-num {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.about-card h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #000066;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* 5. 미션 & 비전 체계도 */
+.vision-board {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-banner {
+  background: linear-gradient(90deg, #ff007f, #0033cc);
+  color: #ffffff;
+  padding: 20px;
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.mb-label {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #ffff00;
+}
+.mb-text {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.vision-banner {
+  background: linear-gradient(90deg, #00ccff, #00ff66);
+  color: #000066;
+  padding: 20px;
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.vb-label {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #cc0000;
+}
+.vb-text {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 #fff;
+}
+.vb-sub {
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.value-item {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.vi-blue { background-color: #cce6ff; }
+.vi-green { background-color: #d9ffd9; }
+.vi-purple { background-color: #f2ccff; }
+.vi-orange { background-color: #ffe6cc; }
+
+.vi-badge {
+  display: inline-block;
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+}
+
+.value-item h4 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.value-item p {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* 포로리 바 */
+.porori-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #ff99cc;
+  border: 3px solid #000000;
+  padding: 12px 20px;
+  margin: 25px auto 0;
+  max-width: 650px;
+  box-shadow: 4px 4px 0 #000;
+}
+.porori-emoji { font-size: 2rem; }
+.porori-txt { font-size: 1.1rem; color: #660033; font-weight: 900; }
+
+/* 6. 주요 업무 탭 UI */
+.task-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.task-tab {
+  font-size: 1.05rem;
+  font-weight: 900;
+  padding: 12px 24px;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  color: #000000;
+}
+
+.tab-btn-blue { background-color: #99ccff; }
+.tab-btn-green { background-color: #99ff99; }
+.tab-btn-orange { background-color: #ffcc99; }
+.tab-btn-purple { background-color: #e6ccff; }
+
+.task-tab:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.task-tab.active {
+  background-color: #ffff00 !important;
+  color: #cc0000 !important;
+  border: 4px solid #000000;
+}
+
+.task-panel {
+  display: none;
+}
+.task-panel.active {
+  display: block;
+}
+
+.task-detail-card {
+  background: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0 #000000;
+  padding: 35px;
+}
+
+.card-border-blue { border-top: 10px solid #0066cc; }
+.card-border-green { border-top: 10px solid #009933; }
+.card-border-orange { border-top: 10px solid #ff6600; }
+.card-border-purple { border-top: 10px solid #9900cc; }
+
+.cat-pill {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  border: 1px solid #000;
+  margin-bottom: 8px;
+}
+.pill-blue { background-color: #0066cc; }
+.pill-green { background-color: #009933; }
+.pill-orange { background-color: #ff6600; }
+.pill-purple { background-color: #9900cc; }
+
+.td-header h3 {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.td-desc {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #444;
+  margin: 10px 0 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #000;
+}
+
+.td-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.td-item {
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0 #000;
+  padding: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.item-box-1 { background-color: #ffffcc; }
+.item-box-2 { background-color: #ccffff; }
+.item-box-3 { background-color: #ffd9f3; }
+.item-box-4 { background-color: #e6ffcc; }
+
+.td-item-icon {
+  font-size: 1.8rem;
+}
+
+.td-item strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #000066;
+  margin-bottom: 4px;
+}
+
+.td-item p {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* 7. 로드맵 섹션 */
+.roadmap-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.roadmap-step {
+  flex: 1;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-bg-1 { background-color: #ffccff; }
+.step-bg-2 { background-color: #ffff99; }
+.step-bg-3 { background-color: #99ffff; }
+.step-bg-4 { background-color: #ccff99; }
+
+.step-badge {
+  background: #000000;
+  color: #ffff00;
+  font-size: 0.8rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.step-card h4 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.step-target {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #660066;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #000;
+  padding-bottom: 6px;
+}
+
+.step-card ul {
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.5;
+  list-style: disc inside;
+}
+
+.roadmap-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+/* 8. 조직도 섹션 */
+.org-chart-wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.org-top-box {
+  background: #ff007f;
+  color: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 5px 5px 0 #000;
+  padding: 16px;
+  text-align: center;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.org-rank {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #ffff00;
+}
+.org-top-box h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.org-connector {
+  width: 4px;
+  height: 30px;
+  background: #000000;
+  margin: 0 auto 20px;
+}
+
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.org-dept-card {
+  background: #ffffff;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 16px;
+}
+
+.border-top-blue { border-top: 8px solid #0066cc; }
+.border-top-pink { border-top: 8px solid #ff007f; }
+.border-top-green { border-top: 8px solid #009933; }
+.border-top-orange { border-top: 8px solid #ff6600; }
+
+.dept-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 6px;
+}
+.dh-icon { font-size: 1.2rem; }
+.dept-header h4 { font-size: 1.1rem; font-weight: 900; }
+
+.dept-sub-list li { margin-bottom: 10px; }
+.dept-sub-list strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #000099;
+}
+.dept-sub-list span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* 9. 찾아오는 길 (진천 / 과천 탭) */
+.campus-selector {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.campus-tab {
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 14px 28px;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  background: #ffffff;
+}
+
+.tab-jincheon:hover, .tab-gwacheon:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.campus-tab.active {
+  background: #ffff00;
+  color: #cc0000;
+  border: 4px solid #000000;
+}
+
+.campus-panel {
+  display: none;
+}
+.campus-panel.active {
+  display: block;
+}
+
+.campus-summary-card {
+  background: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0 #000000;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.card-bb-blue { border-left: 12px solid #0066cc; }
+.card-bb-green { border-left: 12px solid #009933; }
+
+.campus-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 900;
+  padding: 4px 12px;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+}
+.badge-bb-yellow { background: #ffff00; color: #cc0000; }
+.badge-bb-pink { background: #ff99ff; color: #000099; }
+
+.summary-left h3 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000066;
+  margin-bottom: 10px;
+}
+
+.campus-address {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #cc0000;
+  margin-bottom: 15px;
+}
+
+.campus-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #000;
+}
+
+.map-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-map {
+  padding: 10px 16px;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0 #000;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+.btn-map.kakao { background: #fee500; color: #000; }
+.btn-map.naver { background: #03c75a; color: #fff; }
+.btn-map.copy-addr { background: #ffccff; color: #660066; }
+
+.btn-map:hover {
+  transform: translate(-1px, -1px);
+}
+
+/* 지도 임베드 박스 */
+.map-embed-box {
+  border: 3px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mock-map-bb {
+  height: 100%;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  text-align: center;
+}
+
+.map-jincheon-bg {
+  background: linear-gradient(135deg, #cce6ff 0%, #ffffcc 100%);
+}
+.map-gwacheon-bg {
+  background: linear-gradient(135deg, #d9ffd9 0%, #ffd9f3 100%);
+}
+
+.bb-map-marker {
+  margin-top: 20px;
+}
+.bb-pin {
+  font-size: 2.8rem;
+  animation: bounce 1.2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.bb-pin-label {
+  background: #ffffff;
+  border: 2px solid #000;
+  padding: 8px 12px;
+  display: inline-block;
+  margin-top: 8px;
+}
+.bb-pin-label strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #000066;
+}
+.bb-pin-label span {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.bb-map-notice {
+  background: #ffff00;
+  border: 2px solid #000;
+  padding: 8px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #cc0000;
+}
+
+.bb-neoburi-badge {
+  background: #ff9999;
+  border: 2px solid #ff0000;
+  padding: 8px;
+  font-size: 0.85rem;
+  color: #990000;
+}
+
+/* 교통수단 그리드 */
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.transport-card {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-card-blue { background-color: #e6f2ff; }
+.tc-card-orange { background-color: #fff0e6; }
+.tc-card-green { background-color: #e6ffe6; }
+.tc-card-purple { background-color: #f2e6ff; }
+
+.tc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+}
+.tc-icon { font-size: 1.5rem; }
+.tc-header h4 { font-size: 1.15rem; font-weight: 900; }
+
+.tc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.tc-route strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #000066;
+  margin-bottom: 3px;
+}
+.tc-route p {
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.tc-tip {
+  margin-top: auto;
+  background: #ffffff;
+  border: 2px dashed #000;
+  padding: 10px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #cc0000;
+}
+
+/* 10. FAQ 아코디언 */
+.faq-accordion {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000;
+  margin-bottom: 14px;
+  background: #ffffff;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #000000;
+  text-align: left;
+  background: #ffffcc;
+}
+
+.faq-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #ffffff;
+}
+
+.faq-answer p {
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  line-height: 1.6;
+  border-top: 2px dashed #000;
+}
+
+/* 11. 푸터 */
+.main-footer {
+  background: linear-gradient(135deg, #001a33 0%, #330033 100%);
+  color: #ffffff;
+  border-top: 5px solid #000000;
+  padding: 50px 0 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px dashed #ffffff;
+  margin-bottom: 20px;
+}
+
+.f-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #ffff00;
+  margin-bottom: 6px;
+}
+.f-clam { font-size: 1.6rem; }
+.footer-brand > p {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+.f-info-box p {
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #ffffcc;
+}
+
+.footer-links h4 {
+  color: #00ffff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-links a {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.footer-links a:hover {
+  color: #ffff00;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #ffff99;
+}
+.footer-util-pills {
+  display: flex;
+  gap: 14px;
+}
+
+/* 12. 토스트 */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #ffff00;
+  color: #cc0000;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 900;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* 반응형 모바일 */
+@media (max-width: 1024px) {
+  .about-grid, .core-values-grid, .org-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .transport-grid, .hero-quick-cards {
+    grid-template-columns: 1fr;
+  }
+  .roadmap-wrapper {
+    flex-direction: column;
+  }
+  .roadmap-arrow {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+  .campus-summary-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-bono-mascot {
+    flex-direction: column;
+  }
+  .top-util-bar {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .btn-primary-sm {
+    display: none;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: #ffffcc;
+    border-bottom: 4px solid #000;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+  }
+  .main-nav.active {
+    display: block;
+  }
+  .main-nav ul {
+    flex-direction: column;
+    padding: 20px;
+    gap: 14px;
+  }
+  .about-grid, .core-values-grid, .org-grid, .td-list-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
